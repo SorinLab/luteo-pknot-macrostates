@@ -1,0 +1,12 @@
+ X    X    0 (non-state)
+F1    A    1
+F2    B    2
+I1    C    3
+I2    E    4
+M1    H    5
+M2    K    6
+M3    L    7
+M4    G    8
+U1    I    9
+U2    J   10
+U3    U   11
