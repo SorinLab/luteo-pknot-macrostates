@@ -2,10 +2,7 @@
 
 # ==============================================================================
 # AUTHOR  : KHAI NGUYEN
-# DATE    : 04 2015
-# INPUT   : A list of data points; average structure
-# OUTPUT  : A 
-# PURPOSE :
+# DATE    : July 2016
 # ==============================================================================
 
 $usage = "$0 avgDir  macrostateDir  numTopResults  outputFileName";
@@ -28,7 +25,7 @@ $usage = "$0 avgDir  macrostateDir  numTopResults  outputFileName";
 		# get the macrostate label
 		my $state = $averageFile; 
 		$state =~ s/^macrostate//;
-		$state =~ s/stat.txt$//;
+		$state =~ s/stats.txt$//;
 
 		print $state, "\n";
 
