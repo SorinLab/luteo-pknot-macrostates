@@ -7,11 +7,13 @@
 #          macrostate are specified in the argument input file. The data points 
 #          whose values in these boundaries are extracted and placed in a file.
 
-$maxRMSD       = 32.660;
-$maxRg         = 34.398;
-$maxNC         = 1101.77;
-$maxNNC        = 1930;
-$CutOffTime    = 6000;
+#Used by Nguyet on Dec. 20,2020 for Aquifex
+
+$maxRMSD       = 25.894;
+$maxRg         = 29.792;
+$maxNC         = 4143.0;
+$maxNNC        = 1768;
+$CutOffTime    = 7500;
 
 $input         = $ARGV[0]; # big log file with all data points
 $output_prefix = $ARGV[1];
@@ -24,27 +26,27 @@ open (INPUT, "<", $input) or die "Cannot open $input. $!\n";
 open (LOG, ">", $LogFile) or die "Cannot open $LogFile. $!\n";
 
 open (OUT_A, ">", "${output_prefix}F1.txt") or die "Cannot open ${output_prefix}A.txt. $!\n";
-open (OUT_B, ">", "${output_prefix}F2.txt") or die "Cannot open ${output_prefix}B.txt. $!\n";
+#open (OUT_B, ">", "${output_prefix}F2.txt") or die "Cannot open ${output_prefix}B.txt. $!\n";
 open (OUT_C, ">", "${output_prefix}I1.txt") or die "Cannot open ${output_prefix}C.txt. $!\n";
 open (OUT_E, ">", "${output_prefix}I2.txt") or die "Cannot open ${output_prefix}E.txt. $!\n";
-open (OUT_G, ">", "${output_prefix}M4.txt") or die "Cannot open ${output_prefix}G.txt. $!\n";
+open (OUT_G, ">", "${output_prefix}I3.txt") or die "Cannot open ${output_prefix}G.txt. $!\n";
 open (OUT_H, ">", "${output_prefix}M1.txt") or die "Cannot open ${output_prefix}H.txt. $!\n";
 open (OUT_I, ">", "${output_prefix}U1.txt") or die "Cannot open ${output_prefix}I.txt. $!\n";
 open (OUT_J, ">", "${output_prefix}U2.txt") or die "Cannot open ${output_prefix}J.txt. $!\n";
 open (OUT_K, ">", "${output_prefix}M2.txt") or die "Cannot open ${output_prefix}K.txt. $!\n";
-open (OUT_L, ">", "${output_prefix}M3.txt") or die "Cannot open ${output_prefix}L.txt. $!\n";
+#open (OUT_L, ">", "${output_prefix}M3.txt") or die "Cannot open ${output_prefix}L.txt. $!\n";
 open (OUT_U, ">", "${output_prefix}U3.txt") or die "Cannot open ${output_prefix}U.txt. $!\n";
 
 my %MacrostatePopulations = ();
 $MacrostatePopulations{"F1"} = 0;
-$MacrostatePopulations{"F2"} = 0;
+#$MacrostatePopulations{"F2"} = 0;
 $MacrostatePopulations{"I1"} = 0;
 $MacrostatePopulations{"I2"} = 0;
-$MacrostatePopulations{"M4"} = 0;
+$MacrostatePopulations{"I3"} = 0;
 $MacrostatePopulations{"M1"} = 0;
 $MacrostatePopulations{"U2"} = 0;
 $MacrostatePopulations{"M2"} = 0;
-$MacrostatePopulations{"M3"} = 0;
+#$MacrostatePopulations{"M3"} = 0;
 $MacrostatePopulations{"U3"} = 0;
 $MacrostatePopulations{"X"} = 0; # Counts the number of datum not assigned to a macrostate
 
