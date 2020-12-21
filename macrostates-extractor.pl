@@ -61,13 +61,13 @@ while (my $line = <INPUT>)
 
     if ($time < $CutOffTime) { next; }
     
-    my $rmsd    = $items[5];  # RMSD
-    my $rg      = $items[6];  # Rg
-    my $nc      = $items[12]; # Native contacts
-    my $nnc     = $items[13]; # Non-native contacts
+    my $rmsd    = $items[11];  # RMSD
+    my $rg      = $items[12];  # Rg
+    my $nc      = $items[8]; # Native contacts
+    my $nnc     = $items[9]; # Non-native contacts
     
-    # Extract State A/F1    SAME
-    if (IsBetweenMinMax($rmsd, 0.0, 3.0))
+    # Extract State A/F1    CHANGED 12/20/20 by Nguyet
+    if (IsBetweenMinMax($rmsd, 0.0, 5.0))
     {   
         print OUT_A $OriginalLine;
         $MacrostatePopulations{"F1"} += 1;
